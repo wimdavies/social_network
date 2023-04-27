@@ -56,6 +56,21 @@ RSpec.describe UserAccountRepository do
     end
   end
 
+  context '#delete' do
+    it 'deletes the first record' do
+      repo = UserAccountRepository.new
+
+      repo.delete(1)
+
+      user_accounts = repo.all
+      user_account = user_accounts.first
+
+      expect(user_account.id).to eq '2'
+      expect(user_account.username ).to eq 'Anna'
+      expect(user_account.email_address).to eq 'anna@aol.com'
+    end
+  end
+
   context "#create" do
     it 'creates a new Alice record' do
       repo = UserAccountRepository.new
@@ -72,21 +87,6 @@ RSpec.describe UserAccountRepository do
       expect(user_account.id).to eq '4'
       expect(user_account.username).to eq 'Alice'
       expect(user_account.email_address).to eq 'alice@hotmail.co.uk'
-    end
-  end
-
-  context '#delete' do
-    it 'deletes the first record' do
-      repo = UserAccountRepository.new
-
-      repo.delete(1)
-
-      user_accounts = repo.all
-      user_account = user_accounts.first
-
-      expect(user_account.id).to eq '2'
-      expect(user_account.username ).to eq 'Anna'
-      expect(user_account.email_address).to eq 'anna@aol.com'
     end
   end
 end

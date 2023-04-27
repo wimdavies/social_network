@@ -105,7 +105,7 @@ class PostRepository
   # No arguments
   def all
     # Executes the SQL query:
-    # SELECT id, title, content, number_of_views, post_id FROM posts;
+    # SELECT id, title, content, number_of_views, user_account_id FROM posts;
 
     # Returns an array of Post objects.
   end
@@ -114,7 +114,7 @@ class PostRepository
   # One argument: the id (number)
   def find(id)
     # Executes the SQL query:
-    # SELECT id, title, content, number_of_views, post_id FROM posts WHERE id = $1;
+    # SELECT id, title, content, number_of_views, user_account_id FROM posts WHERE id = $1;
 
     # Returns a single Post object.
   end
@@ -123,7 +123,7 @@ class PostRepository
   # one argument: the Post model 
   def create(post)
     # Executes the SQL query:
-    # INSERT INTO posts (title, content, number_of_views, post_id) VALUES ($1, $2);
+    # INSERT INTO posts (title, content, number_of_views, user_account_id) VALUES ($1, $2, $3, $4);
 
     # Returns nothing
   end
