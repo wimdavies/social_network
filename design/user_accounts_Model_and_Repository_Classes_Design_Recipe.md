@@ -132,7 +132,7 @@ class UserAccountRepository
 
   # deletes a given record
   # one argument: the record to delete
-  def delete(user_account)
+  def delete(id)
     # Executes the SQL query:
     # DELETE FROM user_accounts WHERE id = $1;
 
@@ -205,7 +205,7 @@ repo.delete(1) # => nil
 
 user_accounts = repo.all
 
-user_account = user_accounts.fist
+user_account = user_accounts.first
 
 user_account.id # => '2'
 user_account.username # => 'Anna'
